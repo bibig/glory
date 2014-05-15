@@ -23,7 +23,7 @@ describe('basic test', function () {
       res.render('index.html', { title: 'hello world!' });
     });
 
-    glory.initTailbone();
+    glory.tail();
   });
 
   it('get static resource', function (done) {

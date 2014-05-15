@@ -85,9 +85,9 @@ Glory.prototype.initSession = function () {
 };
 
 Glory.prototype.initCsrf = function () {
-  if (this.config.csrf === false) { return; }
-
-  this.app.use(require('csurf')());
+  if (this.config.csrf === true) {
+    this.app.use(require('csurf')());  
+  }
 };
 
 Glory.prototype.initShine = function () {
@@ -116,7 +116,7 @@ Glory.prototype.initStatic = function () {
   this.app.use(staticRoot, express.static(this.config.staticPath));
 };
 
-Glory.prototype.initTailbone = function () {
+Glory.prototype.tail = function () {
   if (this.config.tailbone === false) { return; }
 
   require('tailbone').create(this.config.tailbone).enable(this.app);
@@ -129,7 +129,7 @@ Glory.prototype.ready = function (callback) {
   });
   
   this.app.set('port', this.isProduction ? config.pro : config.dev);
-  this.initTailbone();
+  this.tail();
 
   this.app.listen(this.app.get('port'), callback);
 };
