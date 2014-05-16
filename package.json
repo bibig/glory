@@ -1,6 +1,6 @@
 {
   "name": "glory",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "an express app binded common middlewares",
   "main": "index.js",
   "scripts": {

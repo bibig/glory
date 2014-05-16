@@ -38,6 +38,10 @@ Glory.prototype.initApp = function () {
     app.use(multipart( this.config.multipart || {}));  
   }
 
+  if (this.config['x-powered-by'] === false) {
+    app.disable('x-powered-by');
+  }
+
 };
 
 Glory.prototype.initViewEngine = function () {
