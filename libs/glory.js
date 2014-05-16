@@ -10,6 +10,7 @@ function create (config) {
 
 function Glory (config) {
   this.config = config || {};
+  this.initPath();
   this.initApp();
   this.initViewEngine();
   this.initStatic();
@@ -40,6 +41,22 @@ Glory.prototype.initApp = function () {
 
   if (this.config['x-powered-by'] === false) {
     app.disable('x-powered-by');
+  }
+
+};
+
+Glory.prototype.initPath = function () {
+  var appPath = this.config.path;
+
+  if (appPath) {
+
+    if ( ! this.config.views) {
+      this.config.views = path.join(appPath, './views');
+    }
+
+    if ( ! this.config.staticPath) {
+      this.config.staticPath = path.join(appPath, './public'); 
+    }
   }
 
 };

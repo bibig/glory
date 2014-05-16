@@ -1,8 +1,7 @@
 
 var path = require('path');
 var glory = require('../index')({
-  views      : path.join(__dirname, './views'),
-  staticPath : path.join(__dirname, './public')
+  path: __dirname
 });
 
 glory.app.get('/e', function (req, res, next) {
