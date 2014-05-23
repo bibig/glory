@@ -113,7 +113,7 @@ Glory.prototype.initCsrf = function () {
 Glory.prototype.initShine = function () {
   if (this.config.shine === false) { return; }
   
-  this.app.use(require('shine')());  
+  this.app.use(require('shine')(this.config.shine || 15));  // hold 15 seconds to show the alert message
 };
 
 Glory.prototype.initStatic = function () {
