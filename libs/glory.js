@@ -22,11 +22,10 @@ function Glory (config) {
 }
 
 Glory.prototype.initApp = function () {
-  var logger = require('morgan');
-  var bodyParser    = require('body-parser');
+  var logger     = require('morgan');
+  var bodyParser = require('body-parser');
+  var app        = this.app = express();
   var multipart;
-  var app = this.app = express();
-
   
   this.isProduction = app.get('env') === 'production';
 
@@ -120,8 +119,6 @@ Glory.prototype.initShine = function () {
 Glory.prototype.initStatic = function () {
   var staticRoot;
 
-  // console.log(this.config);
-
   if ( ! this.config.staticPath ) { return; }
 
   staticRoot = this.config.staticRoot || '/';
@@ -129,8 +126,8 @@ Glory.prototype.initStatic = function () {
   if (this.config.stylus) {
     this.app.use(staticRoot, require('stylus').middleware({
       src      : this.config.staticPath,
-      compress : (app.isProduction ? true : false),
-      force    : (app.isProduction ?  false : true)
+      compress : (this.isProduction ? true : false),
+      force    : (this.isProduction ?  false : true)
     }));  
   }
   // console.log('ready to set static resources: %s, %s', staticRoot, this.config.staticPath);

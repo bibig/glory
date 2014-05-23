@@ -1,6 +1,6 @@
 {
   "name": "glory",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "an express app binded common middlewares",
   "main": "index.js",
   "scripts": {
@@ -20,8 +20,8 @@
     "connect-multiparty" : "^1.0.3",
     "cookie-session"     : "*",
     "csurf"              : "*",
-    "shine"              : ">= 0.0.3",
-    "tailbone"           : ">= 0.0.4",
+    "shine"              : "^0.1.0",
+    "tailbone"           : "^0.1.0",
     "yi"                 : ">= 0.0.6",
     "swig"               : "*"
   },
