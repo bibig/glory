@@ -1,6 +1,6 @@
 {
   "name": "glory",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "an express app binded common middlewares",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,7 @@
   ],
    "dependencies": {
     "express"            : "^4.0.0",
+    "stylus"             : "*",
     "static-favicon"     : "^1.0.0",
     "morgan"             : "^1.0.0",
     "cookie-parser"      : "^1.0.1",
